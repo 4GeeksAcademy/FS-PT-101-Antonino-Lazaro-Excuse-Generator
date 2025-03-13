@@ -7,6 +7,7 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function () {
   //write your code here
+  
   const personaje = [
     "Mi abuelo borracho",
     "La tía chiflada de mi primo",
@@ -49,11 +50,6 @@ window.onload = function () {
   let InsertExcuse = () => excuseGenerated.innerText = GenerateExcuse(personaje, accion, objeto, lugar);;
 
 
-
-  document.addEventListener('DOMContentLoaded', function () {                             //cuando recargue la pagina llamamos a la función InsertExcuse
-    InsertExcuse();
-  });
-
   buttonGenerateExcuse.addEventListener('click', function () {                            //cuando se haga click en el boton buttonGenerateExcuse llamamos a la función InsertExcuse   
     InsertExcuse();
   });
@@ -84,4 +80,6 @@ window.onload = function () {
       document.getElementById('newExcuse').value = '';
     }                                                                                   //limpiamos el input de newExcuse
   });
+
+  InsertExcuse();                                                                       // llamamos a InsertExcuse() cada vez que se recarga la ventana.
 };
